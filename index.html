@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dropping Blocks</title>
+</head>
+<body>
+    <h2>
+        <span style="--i:1;">H</span>
+        <span style="--i:2;">a</span>
+        <span style="--i:3;">p</span>
+        <span style="--i:4;">p</span>
+        <span style="--i:5;">y</span>
+        <span style="--i:7; margin-left: 5vw;">M</span>
+        <span style="--i:8;">o</span>
+        <span style="--i:9;">n</span>
+        <span style="--i:10;">t</span>
+        <span style="--i:11;">h</span>
+        <span style="--i:12;">s</span>
+        <span style="--i:13;">a</span>
+        <span style="--i:14;">r</span>
+        <span style="--i:15;">y</span>
+        <span style="--i:17; margin-left: 5vw;">A</span>
+        <span style="--i:18;">i</span>
+        <span style="--i:19;">n</span>
+        <span style="--i:20;">e</span>
+    </h2>
+    <h3>
+        <span style="--i:1;">F</span>
+        <span style="--i:1;">r</span>
+        <span style="--i:1;">o</span>
+        <span style="--i:1;">m:</span>
+        <span style="--i:1; margin-left: 2vw;">R</span>
+        <span style="--i:1;">y</span>
+        <span style="--i:1;">a</span>
+        <span style="--i:1;">n</span>
+    </h3>
+    <div class="container">
+    </div>
+
+    <script>
+        let container = document.querySelector('.container');
+        let count = 900;
+        for (let i = 0; i < count; i++){
+            let box = document.createElement('div');
+            box.className = 'box';
+            container.appendChild(box)  
+        }
+
+        let box = document.querySelectorAll('.box');
+        for(let i=0; i < box.length; i++){
+            let duration = Math.random() * 3;
+            let changeColor = Math.random() * 360;
+            box[i].addEventListener('mouseover',(e) => {
+                box[i].classList.add('active');
+                box[i].style.animationDuration = 1+duration+'s';
+                box[i].style.filter = 'hue-rotate('+changeColor +'deg)'
+            })
+        }
+    </script>
+</body>
+</html>
